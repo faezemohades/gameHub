@@ -2,6 +2,7 @@
 'use client'
 import useGames from '@/hooks/useGames'
 import React from 'react'
+import GameCard from './GameCard'
  
 
 const GameGrid = () => {
@@ -9,11 +10,11 @@ const GameGrid = () => {
   return (
     <>
     {error && <span>{error}</span>}
-    <ul>
+    <div className='grid-cols-3 gap-4 flex flex-wrap' >
       {games.map((game)=>(
-          <li key={game.id}>{game.name}</li>
+         <GameCard key={game.id} game={game}/>
           ))}
-    </ul>
+    </div>
           </>
   )
 }
