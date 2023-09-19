@@ -6,8 +6,8 @@ export default function Home() {
     <main >
     <Navbar/>
     <div className='flex justify-around h-96'>
-     <div className='w-1/5'>side</div>
-     <div className='w-4/5'>
+     <div className='col-start-7'>side</div>
+     <div className='col-start-4'>
       <GameGrid/>
      </div>
     </div>
