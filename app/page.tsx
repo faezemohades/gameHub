@@ -12,7 +12,7 @@ export default function Home() {
     <Navbar/>
     <div className='grid grid-cols-7 gap-x-1 m-auto'>
      <div className='col-span-1 hidden md:block'>
-      <GenerList onSelectGenre={(genre)=>setSelectedGenre(genre)}/>
+      <GenerList selectedGenre={selectedGenre} onSelectGenre={(genre)=>setSelectedGenre(genre)}/>
      </div>
      <div className='col-span-6'>
       <GameGrid selectedGenre={selectedGenre}/>
