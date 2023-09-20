@@ -3,6 +3,7 @@
 import GameGrid from '@/components/GameGrid'
 import GenerList from '@/components/GenreList'
 import Navbar from '@/components/Navbar'
+import PlatformSelector from '@/components/PlatformSelector';
 import { Genre } from '@/hooks/useGenreList';
 import React, { useState } from 'react';
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <GenerList selectedGenre={selectedGenre} onSelectGenre={(genre)=>setSelectedGenre(genre)}/>
      </div>
      <div className='col-span-6'>
+      <PlatformSelector/>
       <GameGrid selectedGenre={selectedGenre}/>
      </div>
     </div>
