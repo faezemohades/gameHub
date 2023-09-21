@@ -13,7 +13,7 @@ const GenerList = ({ selectedGenre, onSelectGenre }: Props) => {
   if (isLoading) return <span className="loading loading-dots loading-md"></span>;
 
   return (
-    <ul className="list-none px-1">
+    <ul className="list-none px-3">
       {data.map((genre) => (
         <li key={genre.id}>
           <div className="flex my-1">
