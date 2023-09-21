@@ -5,10 +5,22 @@ import GenerList from '@/components/GenreList'
 import Navbar from '@/components/Navbar'
 import PlatformSelector from '@/components/PlatformSelector';
 import SortSelector from '@/components/SortSelector';
+import { Game, Platform } from '@/hooks/useGames';
 import { Genre } from '@/hooks/useGenreList';
+import { platform } from 'os';
 import React, { useState } from 'react';
+
+// export interface GameQuery{
+//   genre:Genre |null;
+//   platform:Platform |null;
+//   sortOrder:string;
+// }
+
 export default function Home() {
   const [selectedGenre,setSelectedGenre]=useState<Genre |null >(null);
+  const [selectedPlatform,setSelectedPlatform]=useState<Platform |null >(null);
+
+  // const [gameQuery,setGameQuery]=useState<GameQuery>({} as GameQuery)
   return (
     <main >
     <Navbar/>
@@ -18,10 +30,10 @@ export default function Home() {
      </div>
      <div className='col-span-6'>
       <div className='ml-20'>
-      <PlatformSelector/>
-      <SortSelector/>
+      <PlatformSelector onSelectPlatform={(platform)=>setSelectedPlatform(platform)} selectedPlatform={selectedPlatform}/>
+      <SortSelector onSelectSortOrder={(sortOrder=>setGameQuery({...gameQuery,sortOrder}))}/>
       </div>
-      <GameGrid selectedGenre={selectedGenre}/>
+      <GameGrid selectedPlatform={selectedPlatform} selectedGenre={selectedGenre}/>
      </div>
     </div>
     </main>

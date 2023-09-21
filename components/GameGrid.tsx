@@ -1,6 +1,6 @@
 
 'use client'
-import useGames from '@/hooks/useGames'
+import useGames, { Platform } from '@/hooks/useGames'
 import React from 'react'
 import GameCard from './GameCard'
 import GameCardSkeleton from './GameCardSkeleton'
@@ -8,10 +8,11 @@ import { Genre } from '@/hooks/useGenreList'
  
 
 interface Props{
-  selectedGenre:Genre|null
+  selectedGenre:Genre|null;
+  selectedPlatform:Platform | null;
 }
-const GameGrid = ({selectedGenre}:Props) => {
-    const{data,error,isLoading}=useGames(selectedGenre)
+const GameGrid = ({selectedGenre,selectedPlatform}:Props) => {
+    const{data,error,isLoading}=useGames(selectedGenre,selectedPlatform)
     const skeletons=[1,2,3,4,5,6,7,8,9,10,11,12,13,14];
   return (
     <>

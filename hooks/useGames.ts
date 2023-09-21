@@ -1,5 +1,5 @@
+import { platform } from 'os';
 "use client"
-
 import { Platform } from './useGames';
 import useData from './useData';
 import { Genre } from './useGenreList';
@@ -18,6 +18,13 @@ export interface Game{
   metacritic:number;
 }
 
- const useGames = (selectedGenre:Genre |null) => useData<Game>("/games",{params:{genres:selectedGenre?.id}},[selectedGenre?.id])
+ const useGames = (selectedGenre:Genre |null,selectedPlatform:Platform |null) => 
+ useData<Game>("/games",{
+  params:{
+    genres:selectedGenre?.id,
+    platform:selectedPlatform?.id
+  }},
+  [selectedGenre?.id,selectedPlatform?.id]
+  )
 
 export default useGames;

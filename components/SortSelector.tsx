@@ -1,16 +1,28 @@
 import React from 'react'
 
-const SortSelector = () => {
+interface Props{
+    onSelectSortOrder:(sortOrder:string)=>void;
+}
+const SortSelector = ({onSelectSortOrder}:Props) => {
+    
+    const sortOrders=[
+        {value:'',label:'Relevance'},
+        {value:'-added',label:'Date added'},
+        {value:'name',label:'Name'},
+        {value:'-relased',label:'Release date'},
+        {value:'-metacritic',label:'Popularity'},
+        {value:'-rating',label:'Average'}
+    ]
+    
    return (
     <details className="dropdown mb-5">
     <summary className="m-1 btn">Order by :Relevance</summary>
     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-        <li ><a>Relevance</a></li>
-        <li ><a>Date added</a></li>
-        <li ><a>Name</a></li>
-        <li ><a>Release date</a></li>
-        <li ><a>Popularity</a></li>
-        <li ><a>Average</a></li>
+      {sortOrders.map((order)=>
+      <li key={order.value} onClick={()=>onSelectSortOrder(order.value)}>
+        <a>{order.label}</a>
+      </li>
+      )}
     </ul>
   </details>
   )
