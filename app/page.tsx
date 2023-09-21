@@ -28,7 +28,7 @@ export default function Home() {
      <div className='col-span-6'>
       <div className='ml-20'>
       <PlatformSelector selectedPlatform={gameQuery.platform} onSelectPlatform={(platform)=>setGameQuery({...gameQuery,platform})} />
-      <SortSelector onSelectSortOrder={(sortOrder=>setGameQuery({...gameQuery,sortOrder}))}/>
+      <SortSelector onSelectSortOrder={(sortOrder=>setGameQuery({...gameQuery,sortOrder}))} sortOrder={gameQuery.sortOrder}/>
       </div>
       <GameGrid gameQuery={gameQuery}/>
      </div>
