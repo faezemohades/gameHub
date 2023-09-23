@@ -11,6 +11,7 @@ const Emoji = ({rating}:Props) => {
 
     const emojiMap:{[key:number]:ImageProps}={
         3:{src:bullsEys ,alt:"exceptional"},
+        5:{src:bullsEys ,alt:"exceptional"},
         4:{src:thumsUp ,alt:"recommnded"},
     }
     
