@@ -4,7 +4,6 @@ import useGames, { Platform } from '@/hooks/useGames'
 import React from 'react'
 import GameCard from './GameCard'
 import GameCardSkeleton from './GameCardSkeleton'
-import { Genre } from '@/hooks/useGenreList'
 import { GameQuery } from '@/app/page'
  
 
