@@ -1,8 +1,12 @@
 'use client'
-import useColorMode from '@/hooks/useColorMode'
-import React, { useEffect, useState } from 'react'
 
-const Navbar = () => {
+import React, { useEffect, useState } from 'react'
+import SearchInput from './SearchInput';
+
+interface Props{
+  onSearch:(searchText:string)=>void;
+}
+const Navbar = ({onSearch}:Props) => {
   const [theme, setTheme] = useState(
     localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light'
   );
@@ -31,6 +35,7 @@ const Navbar = () => {
   <div className="flex-1">
     <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
   </div>
+  <SearchInput onSearch={onSearch}/>
   <div className="flex-none">
     <button className="btn btn-square btn-ghost">
     <label className="swap swap-rotate">
