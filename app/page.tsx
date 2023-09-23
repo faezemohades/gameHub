@@ -24,11 +24,11 @@ export default function Home() {
     <main >
     <Navbar onSearch={(searchText)=>setGameQuery({...gameQuery,searchText})}/>
     <div className='grid grid-cols-12 gap-x-1 m-auto'>
-     <div className='col-span-1 hidden md:block'>
+     <div className='col-span-1 hidden md:block '>
       <GenerList selectedGenre={gameQuery.genre} onSelectGenre={(genre)=>setGameQuery({...gameQuery,genre})}/>
      </div>
      <div className='col-span-11'>
-      <div className='px-20'>
+      <div className='ml-21'>
      <GameHeading gameQuery={gameQuery}/>
      <div className='flex flex-row'>
       <div >

@@ -23,16 +23,16 @@ const PlatformIconList = ({platforms}:Props) => {
         android:FaAndroid
     }
   return (
-    <>
+    <div className='flex'>
         {platforms.map((platform) => {
         const IconComponent = iconMap[platform.name.toLowerCase()]; // Get the corresponding icon component
         return (
           <div key={platform.id}>
-            {IconComponent && <IconComponent  />}
+            {IconComponent && <IconComponent  className='m-1'/>}
           </div>
         );
       })}
-    </>
+    </div>
   )
 }
 

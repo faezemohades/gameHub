@@ -6,11 +6,10 @@ interface Props{
 
 const CriticScore = ({score}:Props) => {
   return (
-    <>
+   
     <span  className={`badge ${
           score < 85 ? 'text-yellow-500' : 'text-green-600'
-        } inline-block mr-2`}>{score}</span>
-    </>
+        } `}>{score}</span>
 
   )
 }
