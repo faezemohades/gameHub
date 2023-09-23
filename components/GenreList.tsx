@@ -13,6 +13,8 @@ const GenerList = ({ selectedGenre, onSelectGenre }: Props) => {
   if (isLoading) return <span className="loading loading-dots loading-md"></span>;
 
   return (
+    <>
+    <span className="text-xl font-bold text-gray-900 sm:truncate sm:tracking-tight p-2">Genre</span>
     <ul className="list-none px-3">
       {data.map((genre) => (
         <li key={genre.id}>
@@ -29,6 +31,7 @@ const GenerList = ({ selectedGenre, onSelectGenre }: Props) => {
         </li>
       ))}
     </ul>
+      </>
   );
 };
 
