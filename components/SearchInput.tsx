@@ -12,10 +12,10 @@ const SearchInput = ({onSearch}:Props) => {
       event.preventDefault();
       if (ref.current) onSearch(ref.current.value);
     }}>
-      <button className='px-2'>
+      <button className='p-2'>
       <FiSearch/>
       </button>
-      <input ref={ref} placeholder='Search Games....' />
+      <input ref={ref} placeholder='Search Games....' className='p-2 rounded-lg'/>
     </form>
   )
 }

@@ -28,7 +28,7 @@ export default function Home() {
       <GenerList selectedGenre={gameQuery.genre} onSelectGenre={(genre)=>setGameQuery({...gameQuery,genre})}/>
      </div>
      <div className='col-span-11'>
-      <div className='ml-21'>
+      <div className='ml-30'>
      <GameHeading gameQuery={gameQuery}/>
      <div className='flex flex-row'>
       <div >
