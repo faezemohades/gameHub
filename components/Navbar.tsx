@@ -1,29 +1,14 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, {} from 'react'
 import SearchInput from './SearchInput';
-import { GiSunflower,GiMoon } from 'react-icons/gi';
+import DarkModeBtn from './DarkModeBtn';
 
 interface Props{
   onSearch:(searchText:string)=>void;
 }
 const Navbar = ({onSearch}:Props) => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light'
-  );
-
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
-
-  useEffect(() => {
-    if (theme) {
-      localStorage.setItem("theme", theme as string); // Type assertion
-    }
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html")?.setAttribute("data-theme", localTheme || "light");
-  }, [theme]);
-  
+ 
   return (
  <div className="navbar bg-base-100">
   <div className="flex-none">
@@ -36,9 +21,7 @@ const Navbar = ({onSearch}:Props) => {
   </div>
   <SearchInput onSearch={onSearch}/>
   <div className='px-2'>
-        <button onClick={toggleTheme}>
-          {theme === 'light' ? <GiMoon size={40} /> : <GiSunflower size={40} />}
-        </button>
+      <DarkModeBtn/>
       </div>
 </div>
    )
