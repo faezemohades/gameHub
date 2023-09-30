@@ -16,12 +16,14 @@ const Navbar = ({onSearch}:Props) => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-
   useEffect(() => {
-    localStorage.setItem('theme', theme);
-    const localTheme = localStorage.getItem('theme');
-    document.querySelector('html')?.setAttribute('data-theme', localTheme || 'light');
+    if (theme) {
+      localStorage.setItem("theme", theme as string); // Type assertion
+    }
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html")?.setAttribute("data-theme", localTheme || "light");
   }, [theme]);
+  
   return (
  <div className="navbar bg-base-100">
   <div className="flex-none">
