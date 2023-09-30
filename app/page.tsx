@@ -1,11 +1,11 @@
 'use client'
 
 import GameGrid from '@/components/GameGrid'
+import GameHeading from '@/components/GameHeading';
 import GenerList from '@/components/GenreList'
 import Navbar from '@/components/Navbar'
 import PlatformSelector from '@/components/PlatformSelector';
 import SortSelector from '@/components/SortSelector';
-import GameHeading from '@/components/gameHeading';
 import {Platform } from '@/hooks/useGames';
 import { Genre } from '@/hooks/useGenreList';
 import React, { useState } from 'react';
