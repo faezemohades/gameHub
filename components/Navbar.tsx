@@ -1,6 +1,5 @@
 'use client'
 
-import React, {} from 'react'
 import SearchInput from './SearchInput';
 import DarkModeBtn from './DarkModeBtn';
 

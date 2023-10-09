@@ -16,7 +16,7 @@ const GenerList = ({ selectedGenre, onSelectGenre }: Props) => {
     <>
     <span className="text-xl font-bold text-gray-900 sm:truncate sm:tracking-tight p-2">Genre</span>
     <ul className="list-none px-3">
-      {data.map((genre) => (
+      {data?.results.map((genre) => (
         <li key={genre.id}>
           <div className="flex my-1">
             <img className="rounded-md" src={genre.image_background} alt="img" width={42} height={32} />

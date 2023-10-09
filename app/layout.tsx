@@ -1,9 +1,16 @@
- import Providers from '@/services/Providers'
+"use client"
+import Providers from '@/services/Providers'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 const inter = Inter({ subsets: ['latin'] })
+const queryClient = new QueryClient()
 
 export const metadata: Metadata = {
   title: 'GameHub',
@@ -16,10 +23,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="en" data-theme="light">
       <body className={inter.className}>
         <Providers>
+        <QueryClientProvider client={queryClient}>
           {children}
+          <ReactQueryDevtools  />
+          </QueryClientProvider>
           </Providers>
           </body>
     </html>

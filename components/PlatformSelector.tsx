@@ -14,7 +14,7 @@ const PlatformSelector = ({onSelectPlatform,selectedPlatform}:Props) => {
     <details className="dropdown mb-5 ml-6">
     <summary className="m-1 btn">{selectedPlatform?.name || "Platforms"}</summary>
     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-        {data.map(platform=>
+        {data?.results.map(platform=>
         <li key={platform.id} onClick={()=>onSelectPlatform(platform)}><a>{platform.name}</a></li>
         )}
     </ul>
