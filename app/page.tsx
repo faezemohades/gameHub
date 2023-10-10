@@ -6,8 +6,8 @@ import GenerList from '@/components/GenreList'
 import Navbar from '@/components/Navbar'
 import PlatformSelector from '@/components/PlatformSelector';
 import SortSelector from '@/components/SortSelector';
-import {Platform } from '@/hooks/useGames';
 import { Genre } from '@/hooks/useGenreList';
+import { Platform } from '@/hooks/usePlatforms';
 import React, { useState } from 'react';
 
 export interface GameQuery{

@@ -1,10 +1,9 @@
 
 'use client'
-import useGames, { Platform } from '@/hooks/useGames'
-import React from 'react'
+import { GameQuery } from '@/app/page'
+import useGames from '@/hooks/useGames'
 import GameCard from './GameCard'
 import GameCardSkeleton from './GameCardSkeleton'
-import { GameQuery } from '@/app/page'
  
 
 interface Props{
