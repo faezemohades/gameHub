@@ -3,10 +3,10 @@ import useGenres, { Genre } from '@/hooks/useGenreList';
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenerList = ({ selectedGenre, onSelectGenre }: Props) => {
+const GenerList = ({ selectedGenreId, onSelectGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
 
   if (error) return null;
@@ -23,7 +23,7 @@ const GenerList = ({ selectedGenre, onSelectGenre }: Props) => {
             <button
               onClick={() => onSelectGenre(genre)}
               className={`btn px-2 bg-transparent border-0 py-0 ${
-                genre.id === selectedGenre?.id ? 'font-bold' : 'font-light'
+                genre.id === selectedGenreId ? 'font-bold' : 'font-light'
               }`}>
               {genre.name}
             </button>
